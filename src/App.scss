@@ -1,0 +1,257 @@
+.main {
+  //width: 100%;
+  height: calc(100% - 50px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  &__title {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 2rem 0;
+  }
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 15px;
+    width: fit-content;
+    padding: 0px 20px 20px;
+  }
+}
+
+.card {
+  //flex-grow: 2;
+  width: min(33%, 400px);
+  min-width: min(300px, 100%);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  &__image {
+    display: block;
+    max-width: 230px;
+    max-height: 180px;
+    width: auto;
+    height: auto;
+  }
+  &__detail {
+    width: 100%;
+    padding: 15px;
+    &__title {
+      word-break: break-all;
+      text-align: center;
+      font-weight: 600;
+    }
+    &__actions {
+      display: flex;
+      padding: 20px 15px;
+      justify-content: space-between;
+      &__button {
+        padding: 8px 16px;
+        color: white;
+        background-color: #3da9fc;
+        border: 0px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      &__button:hover {
+        background-color: skyblue;
+      }
+
+      &__button:disabled {
+        background-color: gray !important;
+      }
+    }
+  }
+}
+
+.time-detail {
+  font-weight: 600;
+}
+
+// Modal
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+
+  &__container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__content {
+    background: #f3f7ff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 300px;
+    border-radius: 16px;
+    &__image {
+      text-align: center;
+      padding: 10px;
+      img {
+        max-width: 250px;
+        max-height: 300px;
+        align-self: center;
+        border-radius: 16px;
+      }
+    }
+    &__close {
+      display: flex;
+      justify-content: flex-end;
+      &__button {
+        color: #aaaaaa;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      &__close:hover,
+      &__close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+
+    td {
+      padding: 8px;
+    }
+  }
+}
+
+.lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: black;
+  margin: -4px 0 0 -4px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+.loading__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.loading__container__modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  height: 50px;
+  padding: 0px 20px;
+  &__item {
+    float: right;
+    a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    a:hover {
+      background-color: #111;
+    }
+  }
+}
